@@ -5,9 +5,8 @@ Version:	4.0beta33
 Release:	2
 Group:		X11/Applications/Networking
 License:	GPL
-Source0:	http://peruser.netpedia.net/%{name}-%{version}.tar.gz
-# Source0-md5:	8c10b3faf8ea697b90e589358ae6e98e
-URL:		http://peruser.netpedia.net/
+Source0:	%{name}-%{version}.tar.gz
+# Source0-md5:	dee0cd546aa29f99128dba0d8ba17609
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
