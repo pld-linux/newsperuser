@@ -25,7 +25,7 @@ Klient news dla GNOME.
 %build
 
 ./configure --prefix=$RPM_BUILD_ROOT%{_prefix} --exec-prefix=$RPM_BUILD_ROOT%{_prefix}
-make
+%{__make}
 
 
 %install
