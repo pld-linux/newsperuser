@@ -35,7 +35,7 @@ install -d $RPM_BUILD_ROOT%{_prefix}/{bin,share/%{name},share/doc}
 install -d $RPM_BUILD_ROOT%{_datadir}/doc/%{name}-%{version} 
 
 
-make install 
+%{__make} install 
 
 gzip -9nf AUTHORS ChangeLog HACKING INSTALL NEWS README TODO 
 
