@@ -1,17 +1,18 @@
-Summary:	News client.
-Summary(pl):	Klient news.
+Summary:	News client
+Summary(pl):	Klient news
 Name:		news-peruser
 Version:	4.0beta33
-Release:	1
-Group:		Applications/Internet
-######		Unknown group!
-Group(pl):	Aplikacje/Internet
+Release:	2
+Group:		X11/Applications/Networking
+Group(de):	X11/Applikationen/Netzwerkwesen
+Group(pl):	X11/Aplikacje/Sieciowe
 License:	GPL
-Vendor:		PLD
 Source0:	http://peruser.netpedia.net/%{name}-%{version}.tar.gz
-URL:		http://peruser.netpedia.net 
-BuildArch:	i386
+URL:		http://peruser.netpedia.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
 GNOME news client.
@@ -19,21 +20,17 @@ GNOME news client.
 %description -l pl
 Klient news dla GNOME.
 
-
 %prep
 %setup -q
-%build
 
+%build
 ./configure --prefix=$RPM_BUILD_ROOT%{_prefix} --exec-prefix=$RPM_BUILD_ROOT%{_prefix}
 %{__make}
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_prefix}/{bin,share/%{name},share/doc}
-install -d $RPM_BUILD_ROOT%{_datadir}/doc/%{name}-%{version} 
-
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
 
 %{__make} install 
 
@@ -45,5 +42,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%attr(644,root,root) %{_datadir}/%{name}/*
+%{_datadir}/%{name}
 %doc AUT*gz Chang*gz HACK*gz INSTA*gz NEW*gz READ*gz TO*gz
