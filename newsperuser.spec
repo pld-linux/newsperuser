@@ -1,17 +1,17 @@
-Summary: News client.
-Summary(pl): Klient news.
-Name: news-peruser
-Version: 4.0beta33
-Release: 1
-Group: Applications/Internet
-Group(pl): Aplikacje/Internet
-Copyright: GPL
-Vendor: PLD
-Distribution: PLD
-Source: http://peruser.netpedia.net/%{name}-%{version}.tar.gz 
-URL: http://peruser.netpedia.net 
-BuildArch: i386
-BuildRoot: /tmp/%{name}-%{version}-root
+Summary:	News client.
+Summary(pl):	Klient news.
+Name:		news-peruser
+Version:	4.0beta33
+Release:	1
+Group:		Applications/Internet
+######		Unknown group!
+Group(pl):	Aplikacje/Internet
+License:	GPL
+Vendor:		PLD
+Source0:	http://peruser.netpedia.net/%{name}-%{version}.tar.gz
+URL:		http://peruser.netpedia.net 
+BuildArch:	i386
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 GNOME news client.
@@ -21,18 +21,18 @@ Klient news dla GNOME.
 
 
 %prep
-%setup
+%setup -q
 %build
 
-./configure --prefix=$RPM_BUILD_ROOT/usr --exec-prefix=$RPM_BUILD_ROOT/usr  
+./configure --prefix=$RPM_BUILD_ROOT%{_prefix} --exec-prefix=$RPM_BUILD_ROOT%{_prefix}
 make
 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT/usr/{bin,share/%{name},share/doc} 
-install -d $RPM_BUILD_ROOT/usr/share/doc/%{name}-%{version} 
+install -d $RPM_BUILD_ROOT%{_prefix}/{bin,share/%{name},share/doc}
+install -d $RPM_BUILD_ROOT%{_datadir}/doc/%{name}-%{version} 
 
 
 make install 
@@ -44,6 +44,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/bin/*
-%attr(644,root,root) /usr/share/%{name}/*
+%attr(755,root,root) %{_bindir}/*
+%attr(644,root,root) %{_datadir}/%{name}/*
 %doc AUT*gz Chang*gz HACK*gz INSTA*gz NEW*gz READ*gz TO*gz
