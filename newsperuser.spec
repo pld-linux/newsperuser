@@ -9,8 +9,6 @@ Source0:	http://peruser.netpedia.net/%{name}-%{version}.tar.gz
 URL:		http://peruser.netpedia.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 GNOME news client.
