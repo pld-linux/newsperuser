@@ -30,9 +30,9 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
 
-%{__make} install 
+%{__make} install
 
-gzip -9nf AUTHORS ChangeLog HACKING INSTALL NEWS README TODO 
+gzip -9nf AUTHORS ChangeLog HACKING INSTALL NEWS README TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
