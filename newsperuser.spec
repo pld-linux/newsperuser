@@ -32,8 +32,6 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
 
 %{__make} install
 
-gzip -9nf AUTHORS ChangeLog HACKING INSTALL NEWS README TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -41,4 +39,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%doc AUT*gz Chang*gz HACK*gz INSTA*gz NEW*gz READ*gz TO*gz
+%doc AUTHORS ChangeLog HACKING INSTALL NEWS README TODO
