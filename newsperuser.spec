@@ -4,8 +4,6 @@ Name:		news-peruser
 Version:	4.0beta33
 Release:	2
 Group:		X11/Applications/Networking
-Group(de):	X11/Applikationen/Netzwerkwesen
-Group(pl):	X11/Aplikacje/Sieciowe
 License:	GPL
 Source0:	http://peruser.netpedia.net/%{name}-%{version}.tar.gz
 URL:		http://peruser.netpedia.net/
