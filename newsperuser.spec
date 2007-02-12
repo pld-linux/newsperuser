@@ -1,5 +1,5 @@
 Summary:	News client
-Summary(pl):	Klient news
+Summary(pl.UTF-8):   Klient news
 Name:		news-peruser
 Version:	4.0beta33
 Release:	2
@@ -13,7 +13,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 GNOME news client.
 
-%description -l pl
+%description -l pl.UTF-8
 Klient news dla GNOME.
 
 %prep
