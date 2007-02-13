@@ -1,5 +1,5 @@
 Summary:	News client
-Summary(pl.UTF-8):   Klient news
+Summary(pl.UTF-8):	Klient news
 Name:		news-peruser
 Version:	4.0beta33
 Release:	2
